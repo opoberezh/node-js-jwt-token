@@ -1,9 +1,10 @@
 import express from 'express';
 import { port } from './config/index.js';
 import loader from './loaders/index.js';
+import createHashPassword from './utils/helpers/hash-password.js'
 
 const app = express();
-
+ createHashPassword("123456");
 loader(app);
 
 app.listen(port, err => {
